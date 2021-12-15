@@ -1,9 +1,10 @@
 import React from 'react'
+import { posts } from '../samples'
 
 export default class Feed extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { name: 'world' }
+        this.state = { posts_list: posts }
     }
 
     componentDidMount() {}
@@ -13,7 +14,7 @@ export default class Feed extends React.Component {
     render() {
         return (
             <div className="Feed">
-                <h2>Hello {this.state.name}.</h2>
+                <h2>Posts: {JSON.stringify(this.state.posts_list)}.</h2>
             </div>
         )
     }

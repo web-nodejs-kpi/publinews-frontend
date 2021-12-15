@@ -1,9 +1,10 @@
 import React from 'react'
+import { sources } from '../samples'
 
 export default class Sources extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { name: 'world' }
+        this.state = { sources_list: sources }
     }
 
     componentDidMount() {}
@@ -13,7 +14,7 @@ export default class Sources extends React.Component {
     render() {
         return (
             <div className="Sources">
-                <h2>Hello {this.state.name}.</h2>
+                <h2>Sources: {JSON.stringify(this.state.sources_list)}.</h2>
             </div>
         )
     }

@@ -1,9 +1,10 @@
 import React from 'react'
+import { notes } from '../samples'
 
 export default class Notes extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { name: 'world' }
+        this.state = { notes_list: notes }
     }
 
     componentDidMount() {}
@@ -13,7 +14,7 @@ export default class Notes extends React.Component {
     render() {
         return (
             <div className="Notes">
-                <h2>Hello {this.state.name}.</h2>
+                <h2>Notes: {JSON.stringify(this.state.notes_list)}.</h2>
             </div>
         )
     }
