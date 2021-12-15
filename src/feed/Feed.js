@@ -1,5 +1,6 @@
 import React from 'react'
 import { posts } from '../samples'
+import Post from './Post'
 
 export default class Feed extends React.Component {
     constructor(props) {
@@ -14,7 +15,11 @@ export default class Feed extends React.Component {
     render() {
         return (
             <div className="Feed">
-                <h2>Posts: {JSON.stringify(this.state.posts_list)}.</h2>
+                <h2>Feed</h2>
+                {this.state.posts_list.map(post => (
+                    // eslint-disable-next-line react/jsx-key
+                    <Post info={post} />
+                ))}
             </div>
         )
     }

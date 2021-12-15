@@ -1,5 +1,6 @@
 import React from 'react'
 import { notes } from '../samples'
+import Note from '../notes/Note'
 
 export default class Notes extends React.Component {
     constructor(props) {
@@ -14,7 +15,11 @@ export default class Notes extends React.Component {
     render() {
         return (
             <div className="Notes">
-                <h2>Notes: {JSON.stringify(this.state.notes_list)}.</h2>
+                <h2>Notes</h2>
+                {this.state.notes_list.map(note => (
+                    // eslint-disable-next-line react/jsx-key
+                    <Note info={note} />
+                ))}
             </div>
         )
     }
