@@ -17,8 +17,7 @@ export default class Notes extends React.Component {
             <div className="Notes">
                 <h2>Notes</h2>
                 {this.state.notes_list.map(note => (
-                    // eslint-disable-next-line react/jsx-key
-                    <Note info={note} />
+                    <Note key={note.note_id.toString()} info={note} />
                 ))}
             </div>
         )

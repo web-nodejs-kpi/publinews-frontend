@@ -54,16 +54,19 @@ export const posts = [
         source_name: 'Taylor Swift',
         text: 'Hello Fans!',
         created_at: 'Вівторок, 14 грудня 2021 р. о 08:30',
+        link: 'https://www.google.com.ua/?hl=ru',
     },
     {
         source_name: 'Stack Overflow',
         text: 'Hello World!',
         created_at: 'Вівторок, 14 грудня 2021 р. о 06:00',
+        link: 'https://www.google.com.ua/?hl=ru',
     },
     {
         source_name: 'TSN',
         text: 'Hello Ukraine!',
         created_at: 'Вівторок, 14 грудня 2021 р. о 05:01',
+        link: 'https://www.google.com.ua/?hl=ru',
     },
 ]
 

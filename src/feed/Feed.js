@@ -17,8 +17,7 @@ export default class Feed extends React.Component {
             <div className="Feed">
                 <h2>Feed</h2>
                 {this.state.posts_list.map(post => (
-                    // eslint-disable-next-line react/jsx-key
-                    <Post info={post} />
+                    <Post key={post.link} info={post} />
                 ))}
             </div>
         )

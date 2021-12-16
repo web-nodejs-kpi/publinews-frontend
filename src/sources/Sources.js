@@ -17,8 +17,7 @@ export default class Sources extends React.Component {
             <div className="Sources">
                 <h2>Sources</h2>
                 {this.state.sources_list.map(source => (
-                    // eslint-disable-next-line react/jsx-key
-                    <Source info={source} />
+                    <Source key={source.source_id.toString()} info={source} />
                 ))}
             </div>
         )
