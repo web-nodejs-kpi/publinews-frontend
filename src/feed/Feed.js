@@ -1,6 +1,6 @@
 import React from 'react'
 import { posts } from '../samples'
-import Post from './Post'
+import Post from '../common/Post'
 
 export default class Feed extends React.Component {
     constructor(props) {
