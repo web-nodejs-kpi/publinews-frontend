@@ -13,7 +13,7 @@ const api = axios.create({
 export default class App extends React.Component {
     constructor() {
         super()
-        api.get('/sources/').then(res => {
+        api.get('/').then(res => {
             console.log(res.data)
         })
     }
