@@ -5,7 +5,7 @@ import Notes from './notes/Notes.js'
 import Sources from './sources/Sources.js'
 import React from 'react'
 import axios from 'axios'
-import { notes, sources, posts, editor_presets } from './samples'
+import { notes, sources, posts, networks } from './samples'
 
 const api = axios.create({
     baseURL: `http://localhost:9000`,
@@ -29,7 +29,7 @@ export default class App extends React.Component {
 
             sources: sources,
             notes: notes,
-            networks: ['fb', 'tu', 'tw'],
+            networks: networks,
 
             posts: posts,
         }

@@ -77,11 +77,10 @@ const posts = [
     },
 ]
 
-const editor_presets = {
-    link: '293902je0weovik',
-    headline: 'opopopopopo',
-    content: '283fjj2oeijwdklvm',
-    source_id: 4,
-}
+const networks = [
+    { social_network_id: 1, name: 'facebook' },
+    { social_network_id: 2, name: 'tumblr' },
+    { social_network_id: 3, name: 'twitter' },
+]
 
-module.exports = { notes, sources, posts, editor_presets }
+module.exports = { notes, sources, posts, networks }
