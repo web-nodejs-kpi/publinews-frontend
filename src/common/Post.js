@@ -11,9 +11,7 @@ export default class Post extends React.Component {
 
     render() {
         return (
-            <div className="Post">
-                <h3>Post: {JSON.stringify(this.props.info)}.</h3>
-            </div>
+            <div className="Post">Post: {JSON.stringify(this.props.info)}.</div>
         )
     }
 }

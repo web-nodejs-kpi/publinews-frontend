@@ -12,7 +12,8 @@ export default class Source extends React.Component {
     render() {
         return (
             <div className="Source">
-                <h3>Source: {JSON.stringify(this.props.info)}.</h3>
+                Source: {JSON.stringify(this.props.info)}.
+                <button className="delete">&times;</button>
             </div>
         )
     }

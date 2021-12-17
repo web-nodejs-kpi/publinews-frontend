@@ -12,7 +12,8 @@ export default class Note extends React.Component {
     render() {
         return (
             <div className="Note">
-                <h3>Note: {JSON.stringify(this.props.info)}.</h3>
+                Note: {JSON.stringify(this.props.info)}.
+                <button className="delete">&times;</button>
             </div>
         )
     }
