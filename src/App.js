@@ -125,12 +125,20 @@ export default class App extends React.Component {
         this.setState({ editor_title: '' })
         this.setState({ editor_response: '' })
         this.setState({ selected_post: '' })
+        this.setState({ menu: 'notes' })
     }
 
     refreshFeed = () => {
         this.setState(state => {
             return { posts: state.posts.slice(0, 2) }
         })
+    }
+
+    returnToFeed = () => {
+        this.setState({ editor_title: '' })
+        this.setState({ editor_response: '' })
+        this.setState({ selected_post: '' })
+        this.setState({ menu: 'feed' })
     }
 
     render() {
@@ -172,6 +180,7 @@ export default class App extends React.Component {
                         editor_response={this.state.editor_response}
                         handle_input_change={this.handleInputChange}
                         save_note={this.saveNote}
+                        return_to_feed={this.returnToFeed}
                     />
                 ) : null}
                 {this.state.menu === 'sources' ? (
