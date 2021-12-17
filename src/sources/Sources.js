@@ -17,7 +17,11 @@ export default class Sources extends React.Component {
                 <h2>Sources</h2>
                 <AddSource />
                 {this.props.sources_list.map(source => (
-                    <Source key={source.source_id.toString()} info={source} />
+                    <Source
+                        key={source.source_id.toString()}
+                        info={source}
+                        delete_source={this.props.delete_source}
+                    />
                 ))}
             </div>
         )

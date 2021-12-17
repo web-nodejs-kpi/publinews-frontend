@@ -56,6 +56,16 @@ export default class App extends React.Component {
         })
     }
 
+    deleteSource = source_id => {
+        this.setState(state => {
+            return {
+                sources: state.sources.filter(
+                    source => source.source_id !== source_id
+                ),
+            }
+        })
+    }
+
     render() {
         return (
             <div className="App">
@@ -93,7 +103,10 @@ export default class App extends React.Component {
                     />
                 ) : null}
                 {this.state.menu === 'sources' ? (
-                    <Sources sources_list={this.state.sources} />
+                    <Sources
+                        sources_list={this.state.sources}
+                        delete_source={this.deleteSource}
+                    />
                 ) : null}
             </div>
         )
