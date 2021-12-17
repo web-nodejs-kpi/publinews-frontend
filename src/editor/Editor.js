@@ -1,13 +1,11 @@
 import React from 'react'
 import Post from '../common/Post'
-import { posts } from '../samples'
 
 export default class Editor extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             title: '',
-            post: posts[0],
             response: '',
         }
     }
@@ -53,7 +51,10 @@ export default class Editor extends React.Component {
                     <input type="submit" value="Save Note" />
                     <input type="submit" value="Return" />
                 </form>
-                <Post info={this.state.post} />
+                <Post
+                    info={this.props.selected_post}
+                    select_post={this.props.select_post}
+                />
             </div>
         )
     }

@@ -5,7 +5,6 @@ import Post from '../common/Post'
 export default class Feed extends React.Component {
     constructor(props) {
         super(props)
-        this.state = { posts_list: posts }
     }
 
     componentDidMount() {}
@@ -16,9 +15,11 @@ export default class Feed extends React.Component {
         return (
             <div className="Feed">
                 <h2>Feed</h2>
-                {this.state.posts_list.map(post => (
-                    <Post key={post.link} info={post} />
-                ))}
+                <Post
+                    key={this.props.posts_list[0].link}
+                    info={this.props.posts_list[0]}
+                    select_post={this.props.select_post}
+                />
             </div>
         )
     }

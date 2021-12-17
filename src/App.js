@@ -23,6 +23,7 @@ export default class App extends React.Component {
             sources: sources,
             posts: posts,
             editor_presets: editor_presets,
+            selected_post: {},
         }
     }
 
@@ -33,6 +34,10 @@ export default class App extends React.Component {
         this.setState({
             menu: name,
         })
+    }
+
+    selectPost = post => {
+        this.setState({ selected_post: JSON.parse(post) })
     }
 
     render() {
@@ -53,9 +58,21 @@ export default class App extends React.Component {
                         Sources
                     </button>
                 </div>
-                {this.state.menu === 'notes' ? <Notes /> : null}
-                {this.state.menu === 'feed' ? <Feed /> : null}
-                {this.state.menu === 'editor' ? <Editor /> : null}
+                {this.state.menu === 'notes' ? (
+                    <Notes notes_list={this.state.notes} />
+                ) : null}
+                {this.state.menu === 'feed' ? (
+                    <Feed
+                        posts_list={this.state.posts}
+                        select_post={this.selectPost}
+                    />
+                ) : null}
+                {this.state.menu === 'editor' ? (
+                    <Editor
+                        selected_post={this.state.selected_post}
+                        select_post={this.selectPost}
+                    />
+                ) : null}
                 {this.state.menu === 'sources' ? <Sources /> : null}
             </div>
         )

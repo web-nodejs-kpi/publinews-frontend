@@ -9,9 +9,19 @@ export default class Post extends React.Component {
 
     componentWillUnmount() {}
 
+    onClickPost = e => {
+        this.props.select_post(e.target.getAttribute('data-info'))
+    }
+
     render() {
         return (
-            <div className="Post">Post: {JSON.stringify(this.props.info)}.</div>
+            <div
+                className="Post"
+                onClick={this.onClickPost}
+                data-info={JSON.stringify(this.props.info)}
+            >
+                Post: {JSON.stringify(this.props.info)}.
+            </div>
         )
     }
 }
