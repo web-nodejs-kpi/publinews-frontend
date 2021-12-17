@@ -14,11 +14,13 @@ export default class Feed extends React.Component {
         return (
             <div className="Feed">
                 <h2>Feed</h2>
-                <Post
-                    key={this.props.posts_list[0].link}
-                    info={this.props.posts_list[0]}
-                    select_post={this.props.select_post}
-                />
+                {this.props.posts_list.map(post => (
+                    <Post
+                        key={post.link}
+                        info={post}
+                        select_post={this.props.select_post}
+                    />
+                ))}
             </div>
         )
     }
