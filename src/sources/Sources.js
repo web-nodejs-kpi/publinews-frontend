@@ -1,7 +1,6 @@
 import React from 'react'
 import Source from '../sources/Source'
 import AddSource from './AddSource'
-import Editor from '../editor/Editor'
 
 export default class Sources extends React.Component {
     constructor(props) {
