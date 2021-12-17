@@ -1,5 +1,4 @@
 import React from 'react'
-import Post from '../common/Post'
 
 export default class Editor extends React.Component {
     onClickSubmit = e => {
@@ -34,10 +33,7 @@ export default class Editor extends React.Component {
                     <input type="submit" value="Save Note" />
                     <input type="submit" value="Return" />
                 </form>
-                <Post
-                    info={this.props.selected_post}
-                    select_post={this.props.select_post}
-                />
+                <p>Post: {JSON.stringify(this.props.selected_post)}.</p>
             </div>
         )
     }

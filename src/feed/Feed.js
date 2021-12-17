@@ -1,5 +1,5 @@
 import React from 'react'
-import Post from '../common/Post'
+import Post from './Post'
 import QueryForm from './QueryForm'
 
 export default class Feed extends React.Component {
