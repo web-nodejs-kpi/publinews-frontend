@@ -14,6 +14,7 @@ export default class Sources extends React.Component {
                     source_rubric={this.props.source_rubric}
                     source_network={this.props.source_network}
                     handle_input_change={this.props.handle_input_change}
+                    save_source={this.props.save_source}
                 />
                 {this.props.sources_list.map(source => (
                     <Source

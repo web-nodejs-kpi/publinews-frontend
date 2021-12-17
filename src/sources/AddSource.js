@@ -1,11 +1,16 @@
 import React from 'react'
 
 export default class AddSource extends React.Component {
+    onClickSubmit = e => {
+        e.preventDefault()
+        this.props.save_source()
+    }
+
     render() {
         return (
             <div className="Editor">
                 <h5>Create source</h5>
-                <form>
+                <form onSubmit={this.onClickSubmit}>
                     <label>
                         Name:
                         <input

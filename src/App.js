@@ -25,7 +25,7 @@ export default class App extends React.Component {
             source_title: '',
             source_rubric: '',
             source_link: '',
-            source_network: '',
+            source_network: 1,
 
             sources: sources,
             notes: notes,
@@ -74,6 +74,24 @@ export default class App extends React.Component {
         this.setState({
             [name]: value,
         })
+    }
+
+    saveSource = () => {
+        const new_source = {
+            source_id: Math.floor(Math.random() * 1000),
+            name: this.state.source_title,
+            link: this.state.source_link,
+            rubric: this.state.source_rubric,
+            social_network_id: this.state.source_network,
+        }
+        this.setState(state => {
+            return {
+                sources: [...state.sources, new_source],
+            }
+        })
+        this.setState({ source_title: '' })
+        this.setState({ source_rubric: '' })
+        this.setState({ source_link: '' })
     }
 
     render() {
@@ -125,6 +143,7 @@ export default class App extends React.Component {
                         source_rubric={this.state.source_rubric}
                         source_network={this.state.source_network}
                         handle_input_change={this.handleInputChange}
+                        save_source={this.saveSource}
                     />
                 ) : null}
             </div>

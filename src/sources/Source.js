@@ -2,7 +2,6 @@ import React from 'react'
 
 export default class Source extends React.Component {
     onClickDelete = () => {
-        console.log('aaa')
         this.props.delete_source(this.props.info.source_id)
     }
 
