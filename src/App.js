@@ -92,7 +92,9 @@ export default class App extends React.Component {
                         select_post={this.selectPost}
                     />
                 ) : null}
-                {this.state.menu === 'sources' ? <Sources /> : null}
+                {this.state.menu === 'sources' ? (
+                    <Sources sources_list={this.state.sources} />
+                ) : null}
             </div>
         )
     }
