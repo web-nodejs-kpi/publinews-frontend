@@ -8,10 +8,18 @@ export default class Note extends React.Component {
     render() {
         return (
             <div className="Note">
-                Note: {JSON.stringify(this.props.info)}.
-                <button className="delete" onClick={this.onClickDelete}>
-                    &times;
-                </button>
+                <br />
+                <b>
+                    {this.props.info.headline}{' '}
+                    <button className="delete" onClick={this.onClickDelete}>
+                        &times;
+                    </button>
+                </b>
+                <p>{this.props.info.content}</p>
+                Source: <i>{this.props.info.source_id}</i>
+                <br />
+                <a href={this.props.info.link}>original</a>{' '}
+                <small>saved {this.props.info.created_at}</small>
             </div>
         )
     }
