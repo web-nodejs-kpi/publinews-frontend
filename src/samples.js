@@ -1,4 +1,4 @@
-export const notes = [
+const notes = [
     {
         note_id: 1,
         link: '8193f9fjwfsldk',
@@ -25,7 +25,7 @@ export const notes = [
     },
 ]
 
-export const sources = [
+const sources = [
     {
         source_id: 1,
         name: 'tsn',
@@ -56,7 +56,7 @@ export const sources = [
     },
 ]
 
-export const posts = [
+const posts = [
     {
         source_name: 'Taylor Swift',
         text: 'Hello Fans!',
@@ -77,9 +77,11 @@ export const posts = [
     },
 ]
 
-export const editor_presets = {
+const editor_presets = {
     link: '293902je0weovik',
     headline: 'opopopopopo',
     content: '283fjj2oeijwdklvm',
     source_id: 4,
 }
+
+module.exports = { notes, sources, posts, editor_presets }

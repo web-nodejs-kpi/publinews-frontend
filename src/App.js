@@ -5,6 +5,7 @@ import Notes from './notes/Notes.js'
 import Sources from './sources/Sources.js'
 import React from 'react'
 import axios from 'axios'
+import { notes, sources, posts, editor_presets } from './samples'
 
 const api = axios.create({
     baseURL: `http://localhost:9000`,
@@ -18,6 +19,10 @@ export default class App extends React.Component {
         })
         this.state = {
             menu: 'notes',
+            notes: notes,
+            sources: sources,
+            posts: posts,
+            editor_presets: editor_presets,
         }
     }
 
