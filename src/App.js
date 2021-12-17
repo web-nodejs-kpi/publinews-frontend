@@ -66,6 +66,16 @@ export default class App extends React.Component {
         })
     }
 
+    handleInputChange = event => {
+        const target = event.target
+        const value = target.value
+        const name = target.name
+
+        this.setState({
+            [name]: value,
+        })
+    }
+
     render() {
         return (
             <div className="App">
@@ -100,6 +110,9 @@ export default class App extends React.Component {
                     <Editor
                         selected_post={this.state.selected_post}
                         select_post={this.selectPost}
+                        editor_title={this.state.editor_title}
+                        editor_response={this.state.editor_response}
+                        handle_input_change={this.handleInputChange}
                     />
                 ) : null}
                 {this.state.menu === 'sources' ? (

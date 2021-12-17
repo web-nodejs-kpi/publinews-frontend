@@ -4,20 +4,6 @@ import Post from '../common/Post'
 export default class Editor extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            title: '',
-            response: '',
-        }
-    }
-
-    handleInputChange = event => {
-        const target = event.target
-        const value = target.value
-        const name = target.name
-
-        this.setState({
-            [name]: value,
-        })
     }
 
     componentDidMount() {}
@@ -32,20 +18,20 @@ export default class Editor extends React.Component {
                     <label>
                         Title:
                         <input
-                            name="title"
+                            name="editor_title"
                             type="text"
-                            value={this.state.title}
-                            onChange={this.handleInputChange}
+                            value={this.props.editor_title}
+                            onChange={this.props.handle_input_change}
                         />
                     </label>
 
                     <label>
                         Response:
                         <input
-                            name="response"
+                            name="editor_response"
                             type="text"
-                            value={this.state.response}
-                            onChange={this.handleInputChange}
+                            value={this.props.editor_response}
+                            onChange={this.props.handle_input_change}
                         />
                     </label>
                     <input type="submit" value="Save Note" />
