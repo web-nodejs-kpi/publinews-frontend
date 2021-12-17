@@ -2,14 +2,6 @@ import React from 'react'
 import Note from '../notes/Note'
 
 export default class Notes extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-
     render() {
         return (
             <div className="Notes">

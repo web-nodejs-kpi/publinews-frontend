@@ -1,14 +1,6 @@
 import React from 'react'
 
 export default class AddSource extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-
     render() {
         return (
             <div className="Editor">

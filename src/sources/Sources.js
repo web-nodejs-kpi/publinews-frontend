@@ -3,14 +3,6 @@ import Source from '../sources/Source'
 import AddSource from './AddSource'
 
 export default class Sources extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-
     render() {
         return (
             <div className="Sources">

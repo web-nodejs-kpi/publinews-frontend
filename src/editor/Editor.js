@@ -2,14 +2,6 @@ import React from 'react'
 import Post from '../common/Post'
 
 export default class Editor extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    componentDidMount() {}
-
-    componentWillUnmount() {}
-
     render() {
         return (
             <div className="Editor">
