@@ -7,7 +7,7 @@ export default class AddSource extends React.Component {
             name: '',
             link: '',
             rubric: '',
-            social_network: '',
+            social_network: 'fb',
         }
     }
 
@@ -59,12 +59,15 @@ export default class AddSource extends React.Component {
                     </label>
                     <label>
                         Social network:
-                        <input
-                            name="name"
-                            type="text"
-                            value={this.state.rubric}
+                        <select
+                            name="social_network"
+                            value={this.state.value}
                             onChange={this.handleInputChange}
-                        />
+                        >
+                            <option value="fb">fb</option>
+                            <option value="tu">tu</option>
+                            <option value="tw">tw</option>
+                        </select>
                     </label>
                     <input type="submit" value="+" />
                 </form>
