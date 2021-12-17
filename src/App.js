@@ -94,6 +94,31 @@ export default class App extends React.Component {
         this.setState({ source_link: '' })
     }
 
+    saveNote = () => {
+        const atm = new Date()
+        const date =
+            atm.getFullYear() + '-' + (atm.getMonth() + 1) + '-' + atm.getDate()
+        const time =
+            atm.getHours() + ':' + atm.getMinutes() + ':' + atm.getSeconds()
+        const date_time = date + ' ' + time
+        const new_note = {
+            note_id: Math.floor(Math.random() * 10000),
+            link: this.state.selected_post.link,
+            headline: this.state.editor_title,
+            content: this.state.editor_response,
+            created_at: date_time,
+            source_id: this.state.selected_post.source_id,
+        }
+        this.setState(state => {
+            return {
+                notes: [...state.notes, new_note],
+            }
+        })
+        this.setState({ editor_title: '' })
+        this.setState({ editor_response: '' })
+        this.setState({ selected_post: '' })
+    }
+
     render() {
         return (
             <div className="App">
@@ -131,6 +156,7 @@ export default class App extends React.Component {
                         editor_title={this.state.editor_title}
                         editor_response={this.state.editor_response}
                         handle_input_change={this.handleInputChange}
+                        save_note={this.saveNote}
                     />
                 ) : null}
                 {this.state.menu === 'sources' ? (

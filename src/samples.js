@@ -62,18 +62,21 @@ const posts = [
         text: 'Hello Fans!',
         created_at: 'Вівторок, 14 грудня 2021 р. о 08:30',
         link: 'https://www.google.com.ua/search?q=1',
+        source_id: 324,
     },
     {
         source_name: 'Stack Overflow',
         text: 'Hello World!',
         created_at: 'Вівторок, 14 грудня 2021 р. о 06:00',
         link: 'https://www.google.com.ua/search?q=2',
+        source_id: 34,
     },
     {
         source_name: 'TSN',
         text: 'Hello Ukraine!',
         created_at: 'Вівторок, 14 грудня 2021 р. о 05:01',
         link: 'https://www.google.com.ua/search?q=3',
+        source_id: 3,
     },
 ]
 
