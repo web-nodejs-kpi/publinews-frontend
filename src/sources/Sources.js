@@ -8,6 +8,7 @@ export default class Sources extends React.Component {
             <div className="Sources">
                 <h2>Sources</h2>
                 <AddSource
+                    networks={this.props.networks}
                     source_title={this.props.source_title}
                     source_link={this.props.source_link}
                     source_rubric={this.props.source_rubric}

@@ -40,9 +40,16 @@ export default class AddSource extends React.Component {
                             value={this.props.source_network}
                             onChange={this.props.handle_input_change}
                         >
-                            <option value="fb">fb</option>
-                            <option value="tu">tu</option>
-                            <option value="tw">tw</option>
+                            {this.props.networks.map(network => {
+                                return (
+                                    <option
+                                        key={network.social_network_id}
+                                        value={network.social_network_id}
+                                    >
+                                        {network.name}
+                                    </option>
+                                )
+                            })}
                         </select>
                     </label>
                     <input type="submit" value="+" />

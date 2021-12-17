@@ -117,6 +117,7 @@ export default class App extends React.Component {
                 ) : null}
                 {this.state.menu === 'sources' ? (
                     <Sources
+                        networks={this.state.networks}
                         sources_list={this.state.sources}
                         delete_source={this.deleteSource}
                         source_title={this.state.source_title}
