@@ -11,10 +11,22 @@ const api = axios.create({
 })
 
 export default class App extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         api.get('/').then(res => {
             console.log(res.data)
+        })
+        this.state = {
+            menu: 'notes',
+        }
+    }
+
+    handleMenu = event => {
+        const target = event.target
+        const name = target.name
+
+        this.setState({
+            menu: name,
         })
     }
 
@@ -22,10 +34,24 @@ export default class App extends React.Component {
         return (
             <div className="App">
                 <h1>Publinews</h1>
-                <Editor />
-                <Feed />
-                <Notes />
-                <Sources />
+                <div className="btn-group">
+                    <button onClick={this.handleMenu} name="notes">
+                        Notes
+                    </button>
+                    <button onClick={this.handleMenu} name="feed">
+                        Feed
+                    </button>
+                    <button onClick={this.handleMenu} name="editor">
+                        Editor
+                    </button>
+                    <button onClick={this.handleMenu} name="sources">
+                        Sources
+                    </button>
+                </div>
+                {this.state.menu === 'notes' ? <Notes /> : null}
+                {this.state.menu === 'feed' ? <Feed /> : null}
+                {this.state.menu === 'editor' ? <Editor /> : null}
+                {this.state.menu === 'sources' ? <Sources /> : null}
             </div>
         )
     }
