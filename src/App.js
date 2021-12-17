@@ -52,7 +52,8 @@ export default class App extends React.Component {
     }
 
     selectPost = post => {
-        this.setState({ selected_post: JSON.parse(post) })
+        this.setState({ selected_post: post })
+        this.setState({ menu: 'editor' })
     }
 
     deleteNote = note_id => {
@@ -142,9 +143,6 @@ export default class App extends React.Component {
                     </button>
                     <button onClick={this.handleMenu} name="feed">
                         Feed
-                    </button>
-                    <button onClick={this.handleMenu} name="editor">
-                        Editor
                     </button>
                     <button onClick={this.handleMenu} name="sources">
                         Sources
