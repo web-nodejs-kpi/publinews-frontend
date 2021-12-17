@@ -48,6 +48,14 @@ export default class App extends React.Component {
         this.setState({ selected_post: JSON.parse(post) })
     }
 
+    deleteNote = note_id => {
+        this.setState(state => {
+            return {
+                notes: state.notes.filter(note => note.note_id !== note_id),
+            }
+        })
+    }
+
     render() {
         return (
             <div className="App">
@@ -67,7 +75,10 @@ export default class App extends React.Component {
                     </button>
                 </div>
                 {this.state.menu === 'notes' ? (
-                    <Notes notes_list={this.state.notes} />
+                    <Notes
+                        notes_list={this.state.notes}
+                        delete_note={this.deleteNote}
+                    />
                 ) : null}
                 {this.state.menu === 'feed' ? (
                     <Feed
