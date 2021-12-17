@@ -19,11 +19,19 @@ export default class App extends React.Component {
         })
         this.state = {
             menu: 'notes',
-            notes: notes,
+            selected_post: '',
+            editor_title: '',
+            editor_response: '',
+            source_title: '',
+            source_rubric: '',
+            source_link: '',
+            source_network: '',
+
             sources: sources,
+            notes: notes,
+            networks: ['fb', 'tu', 'tw'],
+
             posts: posts,
-            editor_presets: editor_presets,
-            selected_post: {},
         }
     }
 
