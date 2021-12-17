@@ -3,22 +3,6 @@ import React from 'react'
 export default class AddSource extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            name: '',
-            link: '',
-            rubric: '',
-            social_network: 'fb',
-        }
-    }
-
-    handleInputChange = event => {
-        const target = event.target
-        const value = target.value
-        const name = target.name
-
-        this.setState({
-            [name]: value,
-        })
     }
 
     componentDidMount() {}
@@ -33,36 +17,36 @@ export default class AddSource extends React.Component {
                     <label>
                         Name:
                         <input
-                            name="name"
+                            name="source_title"
                             type="text"
-                            value={this.state.name}
-                            onChange={this.handleInputChange}
+                            value={this.props.source_title}
+                            onChange={this.props.handle_input_change}
                         />
                     </label>
                     <label>
                         Link:
                         <input
-                            name="link"
+                            name="source_link"
                             type="text"
-                            value={this.state.link}
-                            onChange={this.handleInputChange}
+                            value={this.props.source_link}
+                            onChange={this.props.handle_input_change}
                         />
                     </label>
                     <label>
                         Rubric:
                         <input
-                            name="name"
+                            name="source_rubric"
                             type="text"
-                            value={this.state.rubric}
-                            onChange={this.handleInputChange}
+                            value={this.props.source_rubric}
+                            onChange={this.props.handle_input_change}
                         />
                     </label>
                     <label>
                         Social network:
                         <select
-                            name="social_network"
-                            value={this.state.value}
-                            onChange={this.handleInputChange}
+                            name="source_network"
+                            value={this.props.source_network}
+                            onChange={this.props.handle_input_change}
                         >
                             <option value="fb">fb</option>
                             <option value="tu">tu</option>

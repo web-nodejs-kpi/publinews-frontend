@@ -119,6 +119,11 @@ export default class App extends React.Component {
                     <Sources
                         sources_list={this.state.sources}
                         delete_source={this.deleteSource}
+                        source_title={this.state.source_title}
+                        source_link={this.state.source_link}
+                        source_rubric={this.state.source_rubric}
+                        source_network={this.state.source_network}
+                        handle_input_change={this.handleInputChange}
                     />
                 ) : null}
             </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Source from '../sources/Source'
 import AddSource from './AddSource'
+import Editor from '../editor/Editor'
 
 export default class Sources extends React.Component {
     constructor(props) {
@@ -15,7 +16,13 @@ export default class Sources extends React.Component {
         return (
             <div className="Sources">
                 <h2>Sources</h2>
-                <AddSource />
+                <AddSource
+                    source_title={this.props.source_title}
+                    source_link={this.props.source_link}
+                    source_rubric={this.props.source_rubric}
+                    source_network={this.props.source_network}
+                    handle_input_change={this.props.handle_input_change}
+                />
                 {this.props.sources_list.map(source => (
                     <Source
                         key={source.source_id.toString()}
