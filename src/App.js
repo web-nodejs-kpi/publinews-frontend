@@ -26,6 +26,8 @@ export default class App extends React.Component {
             source_rubric: '',
             source_link: '',
             source_network: 1,
+            selected_rubric: '',
+            rubrics: '',
 
             sources: sources,
             notes: notes,
@@ -33,6 +35,11 @@ export default class App extends React.Component {
 
             posts: posts,
         }
+        const rubrics = this.state.sources
+            .map(source => source.rubric)
+            .filter((v, i, a) => a.indexOf(v) === i)
+        this.state.rubrics = rubrics
+        this.state.selected_rubric = rubrics[0]
     }
 
     handleMenu = event => {
@@ -119,6 +126,12 @@ export default class App extends React.Component {
         this.setState({ selected_post: '' })
     }
 
+    refreshFeed = () => {
+        this.setState(state => {
+            return { posts: state.posts.slice(0, 2) }
+        })
+    }
+
     render() {
         return (
             <div className="App">
@@ -145,8 +158,12 @@ export default class App extends React.Component {
                 ) : null}
                 {this.state.menu === 'feed' ? (
                     <Feed
+                        selected_rubric={this.state.selected_rubric}
+                        rubrics={this.state.rubrics}
                         posts_list={this.state.posts}
                         select_post={this.selectPost}
+                        handle_input_change={this.handleInputChange}
+                        refresh_feed={this.refreshFeed}
                     />
                 ) : null}
                 {this.state.menu === 'editor' ? (
