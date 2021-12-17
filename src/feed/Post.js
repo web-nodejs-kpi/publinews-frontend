@@ -17,7 +17,7 @@ export default class Post extends React.Component {
                     </button>
                 </b>
                 <br />
-                {this.props.info.text}
+                <p>{this.props.info.text}</p>
                 <br />
                 <a href={this.props.info.link}>original</a>
                 <small> {this.props.info.created_at}</small>
