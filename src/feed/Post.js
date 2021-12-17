@@ -9,10 +9,18 @@ export default class Post extends React.Component {
     render() {
         return (
             <div className="Post">
-                Post: {JSON.stringify(this.props.info)}.
-                <button className="note" onClick={this.onClickPost}>
-                    Note
-                </button>
+                <br />
+                <b>
+                    {this.props.info.source_name}{' '}
+                    <button className="note" onClick={this.onClickPost}>
+                        Note
+                    </button>
+                </b>
+                <br />
+                {this.props.info.text}
+                <br />
+                <a href={this.props.info.link}>original</a>
+                <small> {this.props.info.created_at}</small>
             </div>
         )
     }
