@@ -5,7 +5,7 @@ import Notes from './notes/Notes.js'
 import Sources from './sources/Sources.js'
 import React from 'react'
 import axios from 'axios'
-import { notes, sources, posts, networks } from './samples'
+import { networks } from './samples'
 
 const api = axios.create({
     baseURL: `http://localhost:9000`,
@@ -14,9 +14,6 @@ const api = axios.create({
 export default class App extends React.Component {
     constructor(props) {
         super(props)
-        api.get('/').then(res => {
-            console.log(res.data)
-        })
         this.state = {
             menu: 'notes',
             selected_post: '',
@@ -29,17 +26,18 @@ export default class App extends React.Component {
             selected_rubric: '',
             rubrics: '',
 
-            sources: sources,
-            notes: notes,
+            sources: [],
+            notes: [],
             networks: networks,
 
-            posts: posts,
+            posts: [],
         }
-        const rubrics = this.state.sources
-            .map(source => source.rubric)
-            .filter((v, i, a) => a.indexOf(v) === i)
-        this.state.rubrics = rubrics
-        this.state.selected_rubric = rubrics[0]
+    }
+
+    componentDidMount() {
+        this.getNotes()
+        this.getSources()
+        this.getFeed()
     }
 
     handleMenu = event => {
@@ -139,6 +137,25 @@ export default class App extends React.Component {
         this.setState({ editor_response: '' })
         this.setState({ selected_post: '' })
         this.setState({ menu: 'feed' })
+    }
+
+    getNotes = () => {
+        api.get('/notes/').then(res => this.setState({ notes: res.data }))
+    }
+
+    getSources = () => {
+        api.get('/sources/').then(res => {
+            this.setState({ sources: res.data })
+            const rubrics = this.state.sources
+                .map(source => source.rubric)
+                .filter((v, i, a) => a.indexOf(v) === i)
+            this.setState({ rubrics: rubrics })
+            this.setState({ selected_rubric: rubrics[0] })
+        })
+    }
+
+    getFeed = () => {
+        api.get('/news/').then(res => this.setState({ posts: res.data }))
     }
 
     render() {
