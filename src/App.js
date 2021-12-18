@@ -37,7 +37,6 @@ export default class App extends React.Component {
     componentDidMount() {
         this.getNotes()
         this.getSources()
-        this.getFeed()
     }
 
     handleMenu = event => {
@@ -110,12 +109,6 @@ export default class App extends React.Component {
         this.getNotes()
     }
 
-    refreshFeed = () => {
-        this.setState(state => {
-            return { posts: state.posts.slice(0, 2) }
-        })
-    }
-
     returnToFeed = () => {
         this.setState({ editor_title: '' })
         this.setState({ editor_response: '' })
@@ -170,7 +163,7 @@ export default class App extends React.Component {
                         posts_list={this.state.posts}
                         select_post={this.selectPost}
                         handle_input_change={this.handleInputChange}
-                        refresh_feed={this.refreshFeed}
+                        refresh_feed={this.getFeed}
                     />
                 ) : null}
                 {this.state.menu === 'editor' ? (
