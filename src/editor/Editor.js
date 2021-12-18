@@ -29,7 +29,7 @@ export default class Editor extends React.Component {
                     <br />
                     <b>{this.props.selected_post.source_name}</b>
                     <br />
-                    <p>{this.props.selected_post.text}</p>
+                    <p>{this.props.selected_post.content}</p>
                     <br />
                     <a href={this.props.selected_post.link}>original</a>
                     <small> {this.props.selected_post.created_at}</small>
