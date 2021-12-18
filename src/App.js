@@ -5,7 +5,6 @@ import Notes from './notes/Notes.js'
 import Sources from './sources/Sources.js'
 import React from 'react'
 import axios from 'axios'
-import { networks } from './samples'
 
 const api = axios.create({
     baseURL: `http://localhost:9000`,
@@ -24,11 +23,11 @@ export default class App extends React.Component {
             source_link: '',
             source_network: 1,
             selected_rubric: '',
-            rubrics: '',
+            rubrics: [],
 
             sources: [],
             notes: [],
-            networks: networks,
+            networks: [],
 
             posts: [],
         }
@@ -134,6 +133,12 @@ export default class App extends React.Component {
     getFeed = () => {
         api.get('/news/' + this.state.selected_rubric).then(res =>
             this.setState({ posts: res.data })
+        )
+    }
+
+    getNetworks = () => {
+        api.get('/social_networks/').then(res =>
+            this.setState({ networks: res.data })
         )
     }
 
