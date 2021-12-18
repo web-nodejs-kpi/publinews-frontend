@@ -126,13 +126,15 @@ export default class App extends React.Component {
             const rubrics = this.state.sources
                 .map(source => source.rubric)
                 .filter((v, i, a) => a.indexOf(v) === i)
-            this.setState({ rubrics: rubrics })
-            this.setState({ selected_rubric: rubrics[0] })
+            this.setState({ rubrics: [' ', ...rubrics] })
+            this.setState({ selected_rubric: ' ' })
         })
     }
 
     getFeed = () => {
-        api.get('/news/').then(res => this.setState({ posts: res.data }))
+        api.get('/news/' + this.state.selected_rubric).then(res =>
+            this.setState({ posts: res.data })
+        )
     }
 
     render() {
