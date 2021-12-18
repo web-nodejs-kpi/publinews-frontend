@@ -113,7 +113,6 @@ export default class App extends React.Component {
             headline: this.state.editor_title,
             content: this.state.editor_response,
             created_at: date_time,
-            source_id: this.state.selected_post.source_id,
         }
         this.setState(state => {
             return {

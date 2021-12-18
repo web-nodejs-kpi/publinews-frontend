@@ -16,9 +16,8 @@ export default class Note extends React.Component {
                     </button>
                 </b>
                 <p>{this.props.info.content}</p>
-                Source: <i>{this.props.info.source_id}</i>
                 <br />
-                <a href={this.props.info.link}>original</a>{' '}
+                <a href={this.props.info.link}>Source</a>{' '}
                 <small>saved {this.props.info.created_at}</small>
             </div>
         )
