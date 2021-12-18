@@ -82,22 +82,18 @@ export default class App extends React.Component {
         })
     }
 
-    saveSource = () => {
+    saveSource = async () => {
         const new_source = {
-            source_id: Math.floor(Math.random() * 1000),
-            name: this.state.source_title,
+            source_name: this.state.source_title,
             link: this.state.source_link,
             rubric: this.state.source_rubric,
             social_network_id: this.state.source_network,
         }
-        this.setState(state => {
-            return {
-                sources: [...state.sources, new_source],
-            }
-        })
+        await api.post('/sources/', new_source)
         this.setState({ source_title: '' })
         this.setState({ source_rubric: '' })
         this.setState({ source_link: '' })
+        this.getSources()
     }
 
     saveNote = async () => {
