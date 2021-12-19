@@ -38,6 +38,7 @@ export default class Editor extends React.Component {
                 <label>
                     Response:
                     <textarea
+                        className="Response"
                         name="editor_response"
                         value={this.props.editor_response}
                         onChange={this.props.handle_input_change}
