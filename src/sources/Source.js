@@ -16,7 +16,7 @@ export default class Source extends React.Component {
                     </button>
                 </b>
                 <br />
-                Social network: {this.props.info.social_network_id}
+                Social network: {this.props.info.social_network_name}
                 <br />
                 Link: {this.props.info.link}
                 <br />
