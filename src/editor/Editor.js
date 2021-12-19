@@ -25,7 +25,7 @@ export default class Editor extends React.Component {
                 <button className="cancel" onClick={this.props.return_to_feed}>
                     Cancel
                 </button>
-                <div className="Post">
+                <div className="Box">
                     <br />
                     <b>{this.props.selected_post.source_name}</b>
                     <br />
