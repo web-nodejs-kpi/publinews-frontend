@@ -20,6 +20,7 @@ export default class AddSource extends React.Component {
                             onChange={this.props.handle_input_change}
                         />
                     </label>
+                    <br />
                     <label>
                         Link:
                         <input
@@ -29,6 +30,7 @@ export default class AddSource extends React.Component {
                             onChange={this.props.handle_input_change}
                         />
                     </label>
+                    <br />
                     <label>
                         Rubric:
                         <input
@@ -38,6 +40,7 @@ export default class AddSource extends React.Component {
                             onChange={this.props.handle_input_change}
                         />
                     </label>
+                    <br />
                     <label>
                         Social network:
                         <select

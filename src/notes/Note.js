@@ -7,7 +7,7 @@ export default class Note extends React.Component {
 
     render() {
         return (
-            <div className="Note">
+            <div className="Box">
                 <br />
                 <b>
                     {this.props.info.headline}{' '}

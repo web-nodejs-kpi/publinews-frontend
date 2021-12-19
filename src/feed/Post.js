@@ -8,7 +8,7 @@ export default class Post extends React.Component {
 
     render() {
         return (
-            <div className="Post">
+            <div className="Box">
                 <br />
                 <b>
                     {this.props.info.source_name}{' '}
