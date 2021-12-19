@@ -36,6 +36,7 @@ export default class App extends React.Component {
     componentDidMount() {
         this.getNotes()
         this.getSources()
+        this.getNetworks()
     }
 
     handleMenu = event => {
