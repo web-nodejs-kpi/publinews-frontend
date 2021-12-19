@@ -49,7 +49,7 @@ export default class AddSource extends React.Component {
                                 return (
                                     <option
                                         key={network.social_network_id}
-                                        value={network.name}
+                                        value={network.social_network_id}
                                     >
                                         {network.name}
                                     </option>
