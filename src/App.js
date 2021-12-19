@@ -51,6 +51,12 @@ export default class App extends React.Component {
     selectPost = post => {
         this.setState({ selected_post: post })
         this.setState({ menu: 'editor' })
+        this.setState({
+            editor_title: post.content.slice(0, 20),
+        })
+        this.setState({
+            editor_response: `RE:\n"\n${post.content}\n"\n`,
+        })
     }
 
     deleteNote = note_id => {
