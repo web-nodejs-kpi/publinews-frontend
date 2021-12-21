@@ -59,22 +59,14 @@ export default class App extends React.Component {
         })
     }
 
-    deleteNote = note_id => {
-        this.setState(state => {
-            return {
-                notes: state.notes.filter(note => note.note_id !== note_id),
-            }
-        })
+    deleteNote = async note_id => {
+        await api.delete('/notes/' + note_id)
+        this.getNotes()
     }
 
-    deleteSource = source_id => {
-        this.setState(state => {
-            return {
-                sources: state.sources.filter(
-                    source => source.source_id !== source_id
-                ),
-            }
-        })
+    deleteSource = async source_id => {
+        await api.delete('/sources/' + source_id)
+        this.getSources()
     }
 
     handleInputChange = event => {
