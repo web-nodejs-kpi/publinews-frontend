@@ -1,4 +1,14 @@
 import React from 'react'
+import {
+    MDBBtn,
+    MDBCard,
+    MDBCardBody,
+    MDBCardLink,
+    MDBCardSubTitle,
+    MDBCardText,
+    MDBCardTitle,
+    MDBIcon,
+} from 'mdb-react-ui-kit'
 
 export default class Note extends React.Component {
     onClickDelete = () => {
@@ -7,19 +17,23 @@ export default class Note extends React.Component {
 
     render() {
         return (
-            <div className="Box">
-                <br />
-                <b>
-                    {this.props.info.headline}{' '}
-                    <button className="delete" onClick={this.onClickDelete}>
-                        &times;
-                    </button>
-                </b>
-                <p>{this.props.info.content}</p>
-                <br />
-                <a href={this.props.info.link}>Source</a>{' '}
-                <small>saved {this.props.info.created_at}</small>
-            </div>
+            <MDBCard>
+                <MDBCardBody>
+                    <MDBCardTitle>
+                        {this.props.info.headline}{' '}
+                        <MDBBtn floating tag="a" onClick={this.onClickDelete}>
+                            <MDBIcon fas icon="times" />
+                        </MDBBtn>
+                    </MDBCardTitle>
+                    <MDBCardSubTitle>
+                        {this.props.info.created_at}{' '}
+                        <MDBCardLink href={this.props.info.link}>
+                            Original
+                        </MDBCardLink>
+                    </MDBCardSubTitle>
+                    <MDBCardText>{this.props.info.content}</MDBCardText>
+                </MDBCardBody>
+            </MDBCard>
         )
     }
 }

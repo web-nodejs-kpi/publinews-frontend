@@ -19,7 +19,7 @@ export default class Source extends React.Component {
                 <MDBCardBody>
                     <MDBCardTitle>
                         {this.props.info.name}{' '}
-                        <MDBBtn floating tag="a">
+                        <MDBBtn floating tag="a" onClick={this.onClickDelete}>
                             <MDBIcon fas icon="times" />
                         </MDBBtn>
                     </MDBCardTitle>
