@@ -12,7 +12,6 @@ export default class Feed extends React.Component {
                     handle_input_change={this.props.handle_input_change}
                     refresh_feed={this.props.refresh_feed}
                 />
-                <h2>Feed</h2>
                 {this.props.posts_list.map(post => (
                     <Post
                         key={post.link}

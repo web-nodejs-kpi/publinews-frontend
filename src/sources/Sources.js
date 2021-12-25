@@ -6,7 +6,6 @@ export default class Sources extends React.Component {
     render() {
         return (
             <div className="Sources">
-                <h2>Sources</h2>
                 <AddSource
                     networks={this.props.networks}
                     source_title={this.props.source_title}
