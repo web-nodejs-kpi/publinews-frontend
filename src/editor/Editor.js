@@ -1,49 +1,56 @@
 import React from 'react'
+import {
+    MDBInput,
+    MDBCardBody,
+    MDBCardTitle,
+    MDBCardSubTitle,
+    MDBCardLink,
+    MDBCardText,
+    MDBBtn,
+    MDBCard,
+} from 'mdb-react-ui-kit'
 
 export default class Editor extends React.Component {
     onClickSubmit = () => {
         this.props.save_note()
     }
-
     render() {
         return (
-            <div className="Editor">
-                <h2>Create note</h2>
-                <label>
-                    Title:
-                    <input
-                        name="editor_title"
-                        type="text"
-                        value={this.props.editor_title}
-                        onChange={this.props.handle_input_change}
-                    />
-                </label>
-
-                <button className="save" onClick={this.onClickSubmit}>
+            <div>
+                <MDBInput
+                    label="Title"
+                    id="typeText"
+                    type="text"
+                    value={this.props.editor_title}
+                    onChange={this.props.handle_input_change}
+                />
+                <MDBCard>
+                    <MDBCardBody>
+                        <MDBCardTitle>
+                            {this.props.selected_post.source_name}
+                        </MDBCardTitle>
+                        <MDBCardSubTitle>
+                            {this.props.selected_post.created_at}{' '}
+                            <MDBCardLink href={this.props.selected_post.link}>
+                                Original
+                            </MDBCardLink>
+                        </MDBCardSubTitle>
+                        <MDBCardText>
+                            {this.props.selected_post.content}
+                        </MDBCardText>
+                    </MDBCardBody>
+                </MDBCard>
+                <MDBInput
+                    label="Response"
+                    id="textAreaExample"
+                    textarea
+                    rows={10}
+                    value={this.props.editor_response}
+                    onChange={this.props.handle_input_change}
+                />
+                <MDBBtn float onClick={this.onClickSubmit}>
                     Save
-                </button>
-                <button className="cancel" onClick={this.props.return_to_feed}>
-                    Cancel
-                </button>
-                <div className="Box">
-                    <br />
-                    <b>{this.props.selected_post.source_name}</b>
-                    <br />
-                    <p>{this.props.selected_post.content}</p>
-                    <br />
-                    <a href={this.props.selected_post.link}>original</a>
-                    <small> {this.props.selected_post.created_at}</small>
-                </div>
-                <br />
-                <label>
-                    Response:
-                    <textarea
-                        className="Response"
-                        name="editor_response"
-                        value={this.props.editor_response}
-                        onChange={this.props.handle_input_change}
-                    />
-                </label>
+                </MDBBtn>
             </div>
         )
     }
