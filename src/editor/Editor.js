@@ -48,9 +48,7 @@ export default class Editor extends React.Component {
                     value={this.props.editor_response}
                     onChange={this.props.handle_input_change}
                 />
-                <MDBBtn float onClick={this.onClickSubmit}>
-                    Save
-                </MDBBtn>
+                <MDBBtn onClick={this.onClickSubmit}>Save</MDBBtn>
             </div>
         )
     }
