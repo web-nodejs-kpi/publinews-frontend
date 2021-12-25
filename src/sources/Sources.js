@@ -1,6 +1,7 @@
 import React from 'react'
 import Source from '../sources/Source'
 import AddSource from './AddSource'
+import { MDBContainer, MDBRow } from 'mdb-react-ui-kit'
 
 export default class Sources extends React.Component {
     render() {
@@ -15,13 +16,16 @@ export default class Sources extends React.Component {
                     handle_input_change={this.props.handle_input_change}
                     save_source={this.props.save_source}
                 />
-                {this.props.sources_list.map(source => (
-                    <Source
-                        key={source.source_id.toString()}
-                        info={source}
-                        delete_source={this.props.delete_source}
-                    />
-                ))}
+                <MDBContainer>
+                    {this.props.sources_list.map(source => (
+                        <MDBRow key={source.source_id.toString()}>
+                            <Source
+                                info={source}
+                                delete_source={this.props.delete_source}
+                            />
+                        </MDBRow>
+                    ))}
+                </MDBContainer>
             </div>
         )
     }
