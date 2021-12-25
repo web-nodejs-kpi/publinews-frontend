@@ -1,4 +1,13 @@
 import React from 'react'
+import {
+    MDBCard,
+    MDBCardBody,
+    MDBCardTitle,
+    MDBCardSubTitle,
+    MDBCardText,
+    MDBCardLink,
+    MDBBtn,
+} from 'mdb-react-ui-kit'
 
 export default class Post extends React.Component {
     onClickPost = e => {
@@ -8,18 +17,19 @@ export default class Post extends React.Component {
 
     render() {
         return (
-            <div className="Box">
-                <br />
-                <b>
-                    {this.props.info.source_name}{' '}
-                    <button className="note" onClick={this.onClickPost}>
-                        Note
-                    </button>
-                </b>
-                <p>{this.props.info.content}</p>
-                <a href={this.props.info.link}>original</a>
-                <small> {this.props.info.created_at}</small>
-            </div>
+            <MDBCard>
+                <MDBCardBody>
+                    <MDBCardTitle>{this.props.info.source_name}</MDBCardTitle>
+                    <MDBCardSubTitle>
+                        {this.props.info.created_at}{' '}
+                        <MDBCardLink href={this.props.info.link}>
+                            Original
+                        </MDBCardLink>
+                    </MDBCardSubTitle>
+                    <MDBCardText>{this.props.info.content}</MDBCardText>
+                    <MDBBtn onClick={this.onClickPost}>Create note</MDBBtn>
+                </MDBCardBody>
+            </MDBCard>
         )
     }
 }
