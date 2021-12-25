@@ -5,6 +5,7 @@ import Notes from './notes/Notes.js'
 import Sources from './sources/Sources.js'
 import React from 'react'
 import axios from 'axios'
+import Menu from './common/Menu.js'
 
 const api = axios.create({
     baseURL: `http://localhost:9000`,
@@ -144,18 +145,10 @@ export default class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <h1>Publinews</h1>
-                <div className="btn-group">
-                    <button onClick={this.handleMenu} name="notes">
-                        Notes
-                    </button>
-                    <button onClick={this.handleMenu} name="feed">
-                        Feed
-                    </button>
-                    <button onClick={this.handleMenu} name="sources">
-                        Sources
-                    </button>
-                </div>
+                <Menu
+                    current_menu={this.state.menu}
+                    handle_menu={this.handleMenu}
+                />
                 {this.state.menu === 'notes' ? (
                     <Notes
                         notes_list={this.state.notes}
